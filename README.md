@@ -1,5 +1,5 @@
 # ProVe (UAI'21)
-A Python implementation of ProVe. ProVe is formal verifier for safety property for Artificial Neural Netowrk, presentend at the 37th conference on Uncertainty in Artificial Intelligence. You can find detailed descriptions of ProVe in the conference paper.
+A Python implementation of ProVe. ProVe is a formal verifier for safety property for Artificial Neural Networks, presented at the 37th conference on Uncertainty in Artificial Intelligence. You can find detailed descriptions of ProVe in the conference paper.
 This repository contains the implementations of ProVe and a set of models and properties to reproduce the results inside the paper.
 
 ## Abstract
