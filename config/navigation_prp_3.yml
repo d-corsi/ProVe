@@ -1,0 +1,55 @@
+# BOAT-ICRA2021 DESCRIPTION:
+#   Input:
+#     - [0, ..., 14], scan normalizzati tra [0, 1], da sinistra verso destra
+#     - [15], distance normalizzata tra [0, 1]
+#     - [16], heading normalizzato tra [-1, 1]
+#
+#   Output:
+#     - [Strong Right, Right, Weak Right, None, Weak Left, Left, Strong Left]
+#
+#   Note:
+#     - Min distance frontali: 0.35
+#     - Min distance laterali: 0.24
+
+# Required:
+job_name: ICRA2021_property_3 #job name (only required for labeling)
+model_name: #model name, in the form of 'trained_model/{model_name}.h5'
+input_area: 
+    # Scan
+    - [0.24, 0.24]
+    - [0.24, 0.24]
+    - [0.24, 0.24]
+    - [0.35, 0.35]
+    - [0.35, 0.35]
+    - [0.50, 1.00]
+
+    - [0.50, 1.00]
+    - [0.50, 1.00]
+    - [0.50, 1.00]
+
+    - [0.50, 1.00]
+    - [0.35, 0.35]
+    - [0.35, 0.35]
+    - [0.24, 0.24]
+    - [0.24, 0.24]
+    - [0.24, 0.24]
+    # Distance
+    - [1.00, 1.00]
+    # Heading
+    - [-0.30, 0.30]
+condition_a: [0, 6]
+condition_b: [1, 2, 3, 4, 5] 
+property_mode: 0
+profiler: False
+
+
+# Optional
+basic_iteration: 15
+analysis_mode: semiformal
+semi_formal_precision: 2
+input_means: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0]
+input_ranges: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]
+heuristic: 
+cpu_memory_pool: 
+gpu_memory_pool:
+round:

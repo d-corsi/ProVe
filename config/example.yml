@@ -1,0 +1,32 @@
+# Required:
+job_name: franka_solved #job name (only required for labeling)
+model_name: franka_solved #model name, in the form of 'trained_model/{model_name}.h5'
+input_area: #input area to analyze
+  - [1.0, 1.0]
+  - [0.4, 0.6]
+  - [0.4, 0.6]
+  - [0.4, 0.6]
+  - [0.4, 0.6]
+  - [0, 0.8]
+  - [0, 0.7]
+  - [0, 1.0]
+condition_a: [0]
+condition_b: [1, 2, 3, 4, 5, 6, 7, 8, 9] #decision making property [a] < [b] to analyze, in the form of [a1, a2, ..., an] < [b1, b2, ..., bn]
+property_mode: 0 #property mode of the analysis, option [0, 1]*
+profiler: False #save the output analysis on a .txt file
+
+# Optional
+basic_iteration: #basic splitting to perform before the iterative cycle
+analysis_mode: #desired analysis mode, option: [formal, semiformal]
+semi_formal_precision: #precision of the semiformal mode (default = 10)
+heuristic: #desired splittig method, option: [random, biggest_first, best_first, hybrid]
+gpu_memory_pool: #GPU memory available (bit)
+cpu_memory_pool: #CPU memory available (bit)
+input_means: #mean value for each input bound as array [M1, M2, .., Mn]
+input_ranges: #range value for each input bound as array [R1, R2, .., Rn]
+round: #precision value (for the normalized value in [0, 1]) required for the analysis
+
+# * 
+# Property Mode details:
+# (0) -> all the elements on the left must be less than at least one on the right [DEFAULT]
+# (1) -> aat least one element on the left must be smaller than all the elements on the right
